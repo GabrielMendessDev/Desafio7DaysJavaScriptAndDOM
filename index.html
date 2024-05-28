@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>#7DaysOfCode</title>
+  </head>
+  <body>
+    <h1>Cadastro de Pessoas</h1>
+    <section>
+      <form class="form js-form">
+        <label class="label" for="name"
+          >Nome:
+          <input
+            class="form-field js-field"
+            type="text"
+            name="name"
+            id="name"
+            required
+            maxlength="120"
+          />
+        </label>
+        <label class="label" for="birth-date"
+          >Data de Nascimento:
+          <input
+            class="form-field js-field"
+            type="date"
+            name="birth-date"
+            id="birth-date"
+            required
+          />
+        </label>
+        <button id="btnSubmit" type="submit">Salvar</button>
+      </form>
+    </section>
+    <footer>
+        <p>&copy; Feito por <a href="https://instagram.com/dev_gabrielmendes" target="_blank">Gabriel Mendes</a></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
