@@ -17,6 +17,8 @@
             type="text"
             name="name"
             id="name"
+            minlength="3"
+            pattern="([aA-zZ]+)"
             required
             maxlength="120"
           />
@@ -26,16 +28,27 @@
           <input
             class="form-field js-field"
             type="date"
+            pattern="\d{2}/\d{2}/\d{4}"
             name="birth-date"
             id="birth-date"
             required
           />
         </label>
-        <button id="btnSubmit" type="submit">Salvar</button>
+        <div class="boxButtons">
+        <button id="btnSubmit" class="buttons" type="submit">Salvar</button>
+        <button id="clear" class="buttons">Apagar campos</button>
+      </div>
       </form>
     </section>
+    <div id="caixa-alerta">
+    </div>
     <footer>
-        <p>&copy; Feito por <a href="https://instagram.com/dev_gabrielmendes" target="_blank">Gabriel Mendes</a></p>
+      <p>
+        &copy; Feito por
+        <a href="https://instagram.com/dev_gabrielmendes" target="_blank"
+          >Gabriel Mendes</a
+        >
+      </p>
     </footer>
     <script src="script.js"></script>
   </body>

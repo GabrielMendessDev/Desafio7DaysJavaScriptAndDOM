@@ -16,6 +16,7 @@ h1 {
 .label{
     color: white;
     padding-bottom: 40px;
+    cursor: pointer;
 }
 
 section {
@@ -43,14 +44,26 @@ section {
   border-radius: 4px;
 }
 
-button {
+.boxButtons{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  gap: 40px;
+  margin-right: 60px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
   max-width: 60%;
+  font-size: 15px;
   padding: 10px;
   margin-top: 20px;
+  -webkit-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
+  box-shadow: -8px 4px 47px -4px #28a745;
   background-color: #28a745;
   color: white;
   border: none;
@@ -58,7 +71,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.buttons:hover {
   background-color: #218838;
   transform: translateY(-3px);
   transition: 0.3s;
@@ -80,4 +93,20 @@ footer a {
 footer a:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+#message{
+  color: white;
+  font-size: 20px;
+}
+
+#caixa-alerta{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  margin: 30px 300px 30px 300px;
+  height: auto;
+  padding: 20px 20px 20px 20px;
+  border-radius: 6px;
 }
