@@ -10,8 +10,8 @@
     <h1>Cadastro de Pessoas</h1>
     <section>
       <form class="form js-form">
-        <label class="label" for="name"
-          >Nome:
+        <label class="label" for="name">
+          Nome:
           <input
             class="form-field js-field"
             type="text"
@@ -23,8 +23,8 @@
             maxlength="120"
           />
         </label>
-        <label class="label" for="birth-date"
-          >Data de Nascimento:
+        <label class="label" for="birth-date">
+          Data de Nascimento:
           <input
             class="form-field js-field"
             type="date"
@@ -35,19 +35,31 @@
           />
         </label>
         <div class="boxButtons">
-        <button id="btnSubmit" class="buttons" type="submit">Salvar</button>
-        <button id="clear" class="buttons">Apagar campos</button>
-      </div>
+          <button id="btnSubmit" class="buttons" type="submit">Cadastrar</button>
+          <button id="clear" class="buttons" type="button">Apagar campos</button>
+        </div>
       </form>
     </section>
-    <div id="caixa-alerta">
+    <div class="division">
+      <div id="caixa-alerta"></div>
+      <h1>Tabela de Cadastrados</h1>
+      <div class="style-tabela" id="tabela">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td class="top center"><strong>Nome</strong></td>
+              <td class="top center"><strong>Data de Nascimento</strong></td>
+              <td class="top center" colspan="2" width="1"><strong>Ação</strong></td>
+            </tr>
+          </tbody>
+          <tbody id="dadosTabela"></tbody>
+        </table>
+      </div>
     </div>
     <footer>
       <p>
         &copy; Feito por
-        <a href="https://instagram.com/dev_gabrielmendes" target="_blank"
-          >Gabriel Mendes</a
-        >
+        <a href="https://instagram.com/dev_gabrielmendes" target="_blank">Gabriel Mendes</a>
       </p>
     </footer>
     <script src="script.js"></script>
