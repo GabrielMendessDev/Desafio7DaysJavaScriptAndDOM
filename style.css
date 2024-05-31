@@ -9,7 +9,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 300;
+  font-weight: 600;
   color: #ffffff;
 }
 
@@ -20,9 +20,9 @@ h1 {
 }
 
 section {
-  -webkit-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
-  -moz-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
-  box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
+  -moz-box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
+  box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
   margin: 0 auto 0 auto;
   border-radius: 20px;
   margin: 0 380px 0 380px;
@@ -63,8 +63,8 @@ section {
   margin-top: 20px;
   -webkit-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
   -moz-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
-  box-shadow: -8px 4px 47px -4px #28a745;
-  background-color: #28a745;
+  box-shadow: -8px 4px 47px -4px rgb(13, 13, 200);
+  background-color: rgb(13, 13, 200);
   color: white;
   border: none;
   border-radius: 4px;
@@ -72,9 +72,22 @@ section {
 }
 
 .buttons:hover {
-  background-color: #218838;
+  background-color: rgb(12, 12, 142);
   transform: translateY(-3px);
   transition: 0.3s;
+}
+
+input:focus {
+  outline: 2px solid rgb(13, 13, 200); /* Largura de 2 pixels, estilo sólido, cor azul */
+}
+
+button:focus {
+  outline: 3px solid rgb(13, 13, 200); /* Largura de 3 pixels, estilo tracejado, cor vermelha */
+}
+
+img{
+  height: 28px;
+  width: 28px;
 }
 
 footer{
@@ -119,7 +132,7 @@ footer a:hover {
   border-right: 0;
   font-size: 20px;
   background-color: #2c2c2c; /* Fundo escuro para a tabela */
-  box-shadow: -8px 4px 47px -4px rgba(255, 255, 255, 0.2); /* Sombra branca */
+  box-shadow: -8px 4px 47px -4px rgb(12, 12, 142); /* Sombra branca */
 }
 
 .style-tabela table tr td {
@@ -138,6 +151,8 @@ footer a:hover {
 
 .style-tabela table td.top.center {
   text-align: center;
+  font-weight: 500;
+  font-size: 22px;
 }
 
 .style-tabela table td.total {

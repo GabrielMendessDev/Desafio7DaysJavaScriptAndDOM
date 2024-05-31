@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>#7DaysOfCode</title>
-  </head>
-  <body>
-    <h1>Cadastro de Pessoas</h1>
-    <section>
-      <form class="form js-form">
-        <label class="label" for="name">
-          Nome:
-          <input
-            class="form-field js-field"
-            type="text"
-            name="name"
-            id="name"
-            minlength="3"
-            pattern="([aA-zZ]+)"
-            required
-            maxlength="120"
-          />
-        </label>
-        <label class="label" for="birth-date">
-          Data de Nascimento:
-          <input
-            class="form-field js-field"
-            type="date"
-            pattern="\d{2}/\d{2}/\d{4}"
-            name="birth-date"
-            id="birth-date"
-            required
-          />
-        </label>
-        <div class="boxButtons">
-          <button id="btnSubmit" class="buttons" type="submit">Cadastrar</button>
-          <button id="clear" class="buttons" type="button">Apagar campos</button>
-        </div>
-      </form>
-    </section>
-    <div class="division">
-      <div id="caixa-alerta"></div>
-      <h1>Tabela de Cadastrados</h1>
-      <div class="style-tabela" id="tabela">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tbody>
-            <tr>
-              <td class="top center"><strong>Nome</strong></td>
-              <td class="top center"><strong>Data de Nascimento</strong></td>
-              <td class="top center" colspan="2" width="1"><strong>Ação</strong></td>
-            </tr>
-          </tbody>
-          <tbody id="dadosTabela"></tbody>
-        </table>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>#7DaysOfCode</title>
+</head>
+<body>
+  <h1>Cadastro de Pessoas</h1>
+  <section>
+    <form class="form js-form">
+      <label class="label" for="name">
+        Nome:
+        <input
+          class="form-field js-field"
+          type="text"
+          name="name"
+          id="name"
+          minlength="3"
+          pattern="([aA-zZ]+)"
+          required
+          maxlength="120"
+        />
+      </label>
+      <label class="label" for="birth-date">
+        Data de Nascimento:
+        <input
+          class="form-field js-field"
+          type="date"
+          pattern="\d{2}/\d{2}/\d{4}"
+          name="birth-date"
+          id="birth-date"
+          required
+        />
+      </label>
+      <div class="boxButtons">
+        <button id="btnSubmit" class="buttons" type="submit">Cadastrar</button>
+        <button style="background-color: rgb(56, 56, 56); box-shadow: none;" id="btnEdit" class="buttons" type="button" disabled>Editar</button>
+        <button id="clear" class="buttons" type="button">Apagar campos</button>
       </div>
+    </form>
+  </section>
+  <div class="division">
+    <div id="caixa-alerta"></div>
+    <h1>Tabela de Cadastrados</h1>
+    <div class="style-tabela" id="tabela">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+          <tr>
+            <td class="top center">Nome</td>
+            <td class="top center">Data de Nascimento</td>
+            <td class="top center" colspan="2" width="1">Editar</td>
+            <td class="top center" colspan="2" width="1">Excluir</td>
+          </tr>
+        </tbody>
+        <tbody id="dadosTabela"></tbody>
+      </table>
     </div>
-    <footer>
-      <p>
-        &copy; Feito por
-        <a href="https://instagram.com/dev_gabrielmendes" target="_blank">Gabriel Mendes</a>
-      </p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <footer>
+    <p>
+      &copy; Feito por
+      <a href="https://instagram.com/dev_gabrielmendes" target="_blank">Gabriel Mendes</a>
+    </p>
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>

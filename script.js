@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const nome = document.getElementById("name");
   const birthDate = document.getElementById("birth-date");
   const btnSubmit = document.getElementById("btnSubmit");
+  const btnClear = document.getElementById("clear");
+  const btnEdit = document.getElementById("btnEdit");
   const caixaAlerta = document.getElementById("caixa-alerta");
-  const clearC = document.getElementById("clear");
   const dadosTabela = document.getElementById("dadosTabela");
+  let indexEdit = null;
 
   function salvarDados(event) {
     event.preventDefault(); // Previne o comportamento padrão do botão de envio
@@ -20,11 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       let listaPessoas = JSON.parse(localStorage.getItem("listaPessoas")) || [];
-      listaPessoas.push(pessoa);
+
+      if (indexEdit !== null) {
+        listaPessoas[indexEdit] = pessoa;
+        indexEdit = null;
+      } else {
+        listaPessoas.push(pessoa);
+      }
+
       localStorage.setItem("listaPessoas", JSON.stringify(listaPessoas));
 
       exibirDados();
       limparCampos();
+      resetarBotoes();
     }
   }
 
@@ -54,12 +64,50 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr>
           <td align="center">${pessoa.nome}</td>
           <td align="center">${pessoa.birthDate}</td>
-          <td align="center">
-            <button class="deletar fa fa-times-circle" title="Deletar" onclick="deletarPessoa(${index})">Deletar</button>
+          <td align="center" colspan="2">
+            <button class="deletar fa fa-times-circle" title="Editar" onclick="direcionarUsuario(${index})"><img src="img/editar.png"></button>
           </td>
+          <td align="center" colspan="3"><button class="deletar fa fa-times-circle" title="Deletar" onclick="deletarPessoa(${index})"><img src="img/excluir.png"></button></td>
         </tr>`;
       dadosTabela.innerHTML += pessoaElement;
     });
+  }
+
+  function estilosBotoesEdicao(){
+    btnSubmit.style.backgroundColor = "rgb(56, 56, 56)";
+    btnSubmit.style.boxShadow = "none";
+    btnSubmit.setAttribute("disabled", "");
+    btnEdit.style.boxShadow = "-8px 4px 47px -4px rgb(62, 166, 6)";
+    btnEdit.style.background = "rgb(90, 238, 11)";
+    btnEdit.removeAttribute("disabled");
+    btnClear.style.backgroundColor = "rgb(56, 56, 56)";
+    btnClear.style.boxShadow = "none";
+    btnClear.setAttribute("disabled", "");
+  }
+
+  function resetarBotoes(){
+    btnSubmit.style.backgroundColor = "";
+    btnSubmit.style.boxShadow = "";
+    btnSubmit.removeAttribute("disabled");
+    btnEdit.style.background = "rgb(56, 56, 56)";
+    btnEdit.style.boxShadow = "none";
+    btnEdit.setAttribute("disabled", "");
+    btnClear.style.backgroundColor = "";
+    btnClear.style.boxShadow = "";
+    btnClear.removeAttribute("disabled");
+  }
+
+  window.direcionarUsuario = function(index){
+    const listaPessoas = JSON.parse(localStorage.getItem("listaPessoas")) || [];
+    nome.value = listaPessoas[index].nome;
+    birthDate.value = listaPessoas[index].birthDate;
+    nome.focus();
+    indexEdit = index;
+    estilosBotoesEdicao();
+  }
+
+  function editarPessoa(){
+    salvarDados(new Event('submit'));
   }
 
   window.deletarPessoa = function(index) {
@@ -70,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   btnSubmit.addEventListener("click", salvarDados);
-  clearC.addEventListener("click", limparCampos);
+  btnClear.addEventListener("click", limparCampos);
+  btnEdit.addEventListener("click", editarPessoa);
   exibirDados();
 });
