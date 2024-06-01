@@ -4,6 +4,15 @@ body {
   background-color: #333;
 }
 
+body::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Estilizando o botão de rolagem */
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(18, 18, 233), rgb(16, 16, 153), rgb(10, 10, 129)); /* Cor do botão de rolagem */
+}
+
 h1 {
   display: flex;
   justify-content: center;
