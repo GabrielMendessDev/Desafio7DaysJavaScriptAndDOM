@@ -4,7 +4,6 @@ body {
   background-color: #333;
 }
 
-
 h1 {
   display: flex;
   justify-content: center;
@@ -13,54 +12,56 @@ h1 {
   color: #ffffff;
 }
 
-.label{
-    color: white;
-    padding-bottom: 40px;
-    cursor: pointer;
+.label {
+  color: white;
+  padding-bottom: 20px;
+  cursor: pointer;
+  display: block;
 }
 
 section {
   -webkit-box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
   -moz-box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
   box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   border-radius: 20px;
-  margin: 0 380px 0 380px;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #444;
 }
 
 .form {
-  max-width: 400px;
+  max-width: 100%;
   margin: auto;
-  padding: 40px 0 40px 0;
+  padding: 20px 0;
 }
 
 .form-field {
   display: block;
-  width: 80%;
-  max-width: 80%;
+  width: 100%;
   margin-bottom: 10px;
-  padding: 8px;
+  padding: 8px 1px 8px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.boxButtons{
+.boxButtons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-right: 60px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  max-width: 60%;
+  width: 100%;
+  max-width: 150px;
   font-size: 15px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   -webkit-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
   -moz-box-shadow: -8px 4px 47px -4px rgba(0, 0, 0, 0.56);
   box-shadow: -8px 4px 47px -4px rgb(13, 13, 200);
@@ -78,25 +79,24 @@ section {
 }
 
 input:focus {
-  outline: 2px solid rgb(13, 13, 200); /* Largura de 2 pixels, estilo sólido, cor azul */
+  outline: 2px solid rgb(13, 13, 200);
 }
 
 button:focus {
-  outline: 3px solid rgb(13, 13, 200); /* Largura de 3 pixels, estilo tracejado, cor vermelha */
+  outline: 3px solid rgb(13, 13, 200);
 }
 
-img{
+img {
   height: 28px;
   width: 28px;
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 70px;
   color: white;
-
 }
 
 footer a {
@@ -109,93 +109,120 @@ footer a:hover {
   text-decoration: underline;
 }
 
-#message{
+#message {
   color: white;
   font-size: 20px;
 }
 
-#caixa-alerta{
+#caixa-alerta {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 400;
-  margin: 30px 300px 30px 300px;
-  height: auto;
-  padding: 20px 20px 20px 20px;
+  margin: 30px auto;
+  padding: 20px;
   border-radius: 6px;
+  max-width: 600px;
+}
+
+.style-tabela {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  -webkit-box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
+  -moz-box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
+  box-shadow: -8px 4px 47px -4px rgb(12, 12, 142);
 }
 
 .style-tabela table {
-  float: left;
-  border: 1px solid #333; /* Escurecer a borda */
+  width: 100%;
+  border: 1px solid #333;
   border-bottom: 0;
   border-right: 0;
-  font-size: 20px;
-  background-color: #2c2c2c; /* Fundo escuro para a tabela */
-  box-shadow: -8px 4px 47px -4px rgb(12, 12, 142); /* Sombra branca */
+  font-size: 16px;
+  background-color: #2c2c2c;
 }
 
-.style-tabela table tr td {
+.style-tabela table th, .style-tabela table td {
   padding: 0.5em;
-  border: 1px solid #333; /* Escurecer a borda */
+  border: 1px solid #333;
   border-top: 0;
   border-left: 0;
-  color: #ddd; /* Cor do texto mais clara para contraste */
+  color: #ddd;
 }
 
-.style-tabela table td.top {
-  background-color: #444; /* Fundo escuro para células do topo */
+.style-tabela table th {
+  background-color: #444;
   color: #fff;
   font-size: 1.2em;
 }
 
-.style-tabela table td.top.center {
+.style-tabela table th.center, .style-tabela table td.center {
   text-align: center;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 1em;
 }
 
-.style-tabela table td.total {
-  text-align: left;
-  font-weight: bold;
+.style-tabela table td {
+  background-color: #2c2c2c;
 }
 
-.style-tabela table td.top-toltip {
-  background-color: #555; /* Fundo escuro para células do topo com tooltip */
-  height: 25px;
-  color: #fff;
-  font-size: 16px;
-}
-
-.style-tabela tbody tr td {
-  padding: 0.3em;
-  border: 1px solid #333; /* Escurecer a borda */
-  border-top: 0;
-  border-left: 0;
-}
-
-.style-tabela tbody tr {
-  background-color: #2c2c2c; /* Fundo escuro para linhas */
-  color: #ccc; /* Cor do texto mais clara */
-}
-
-.style-tabela tbody tr:hover {
-  background-color: #3a3a3a; /* Fundo um pouco mais claro no hover */
+.style-tabela table tr:hover td {
+  background-color: #3a3a3a;
   color: #fff;
 }
 
-.style-tabela tbody tr td .deletar {
+.style-tabela table td .deletar {
   color: #bf303c;
   font-size: 1.2em;
   background-color: #2c2c2c;
-  display: inline;
   cursor: pointer;
   text-decoration: none;
 }
 
-.division{
+.division {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin: 0 20px;
+  }
+
+  .boxButtons {
+    gap: 5px;
+  }
+
+  .buttons {
+    max-width: 100px;
+  }
+
+  #caixa-alerta {
+    margin: 20px 10px;
+    padding: 10px;
+  }
+
+  .style-tabela table th, .style-tabela table td {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 10px 0;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+    max-width: 80px;
+    font-size: 12px;
+  }
 }

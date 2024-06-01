@@ -12,9 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault(); // Previne o comportamento padrão do botão de envio
 
     if (!nome.checkValidity()) {
-      mostrarAlerta(nome.validationMessage);
+      if(nome.validationMessage === "É preciso que o formato corresponda ao exigido."){
+        nome.focus();
+        mostrarAlerta("Não são permitidos números, espaços ou caracteres especiais no campo nome.");
+      }else if(nome.validationMessage === "Preencha este campo."){
+        mostrarAlerta("Um dos campos estão vazios. Não é permitido o envio de somente um campo.");
+      }else{
+        mostrarAlerta(nome.validationMessage);
+      }
     } else if (!birthDate.checkValidity()) {
-      mostrarAlerta(birthDate.validationMessage);
+        if(birthDate.validationMessage === "Preencha este campo."){
+          mostrarAlerta("Um dos campos estão vazios. Não é permitido o envio de somente um campo.");
+        }else{
+        mostrarAlerta(birthDate.validationMessage);
+        }
     } else {
       const pessoa = {
         nome: nome.value,
